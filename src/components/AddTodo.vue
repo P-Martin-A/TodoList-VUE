@@ -19,6 +19,8 @@
     },
     methods: {
       addTodo(e) {
+        if(this.title === '') return alert('Ingresa Un dato, "acepta" para recargar la pagina')
+
         e.preventDefault();       
 
         const newTodo = {
@@ -29,7 +31,7 @@
 
         this.$emit('add-todo', newTodo)
 
-        this.title = ' '
+        this.title = ''
       }
     }
   }
